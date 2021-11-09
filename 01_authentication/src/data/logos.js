@@ -1,0 +1,1 @@
+export const LOGOS = {'pear': require('../assets/logo/Pear_Logo.png'),}
