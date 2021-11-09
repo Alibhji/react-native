@@ -6,10 +6,7 @@ npx create-react-native-app firebase_auth_db
 Choose template>> blank
 
 
-yarn add @react-navigation/native
-yarn add @react-navigation/stack
-yarn add react-native-gesture-handler
-yarn add react-native-safe-area-context
+
 
 Create 3 directories:
 	- components
@@ -40,8 +37,17 @@ Create 3 directories:
 ## 🚀 How to use
 
 - Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
+  - Then install depencencies `yarn install`
+- Run `yarn iOS` to start the bundler.
+
+## To create project from beginning:
+- The project is created by `npx create-react-native-app firebase_auth_db`
+- Then installed 
+  - `yarn add @react-navigation/native`
+  - `yarn add @react-navigation/stack`
+  - `yarn add react-native-gesture-handler`
+  - `yarn add react-native-safe-area-context`
+
 - Open the project in a React runtime to try it:
   - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
