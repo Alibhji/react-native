@@ -1,5 +1,27 @@
 # My Universal React Project
 
+
+
+npx create-react-native-app firebase_auth_db
+Choose template>> blank
+
+
+yarn add @react-navigation/native
+yarn add @react-navigation/stack
+yarn add react-native-gesture-handler
+yarn add react-native-safe-area-context
+
+Create 3 directories:
+	- components
+		- signIn
+	- screens
+		- SignInScreen.js
+		- SignUpScreen.js
+	- assets
+	- app.js
+	- firebase.js
+	- navigation.js
+
 <p>
   <!-- iOS -->
   <a href="https://itunes.apple.com/app/apple-store/id982107779">
