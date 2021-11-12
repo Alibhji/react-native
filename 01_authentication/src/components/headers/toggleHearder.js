@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 const ToggleHearder = () => {
     const [activeTab, setactiveTab] = useState('Delivery')
     return (
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection:'row' }}>
             <BtnTab  text = {"Delivery"} textColor ={'white'} activeTab={activeTab} setactiveTab={setactiveTab} />
             <BtnTab  text = {"On-site"} textColor ={'black'} activeTab={activeTab}  setactiveTab={setactiveTab}/>
         </View>
@@ -18,6 +18,7 @@ const BtnTab = (props) => (
         <View style = {{
             backgroundColor: props.activeTab === props.text ? 'black' : 'white',
             paddingHorizontal: 10,
+            marginHorizontal: 5,
             paddingVertical:5,
             borderRadius: 20,
             flexDirection:'row', 

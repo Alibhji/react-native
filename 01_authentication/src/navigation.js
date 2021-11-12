@@ -5,9 +5,13 @@ import LandingScreen from './Screens/LandingScreen'
 import SignInScreen from './Screens/SignInScreen'
 import SignUpScreen from './Screens/SignUpScreen'
 
+
+
+
 const Stack =  createStackNavigator()
 
 const SignInStack = () => (
+   
     <NavigationContainer>
         <Stack.Navigator initialRouteName={'Landing'}>
         <Stack.Screen name="SignIn" component={SignInScreen} />

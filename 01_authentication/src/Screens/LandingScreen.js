@@ -7,6 +7,10 @@ import { Button } from 'react-native-paper';
 import { TextInput } from 'react-native-paper';
 import ToggleHearder from '../components/headers/toggleHearder';
 
+import { firebaseAuth  } from '../components/firebase';
+import {createUserWithEmailAndPassword} from "firebase/auth"
+import Counter from '../components/headers/counter';
+
 
 
 
@@ -17,7 +21,9 @@ const LandingScreen = ({ navigation }) => {
             <ToggleHearder />
             <Logo />
             <BTN  text = {"SignIn"} navigation={navigation} />
+            <Counter />
             {/* <MyComponent /> */}
+
 
 
         </View>
@@ -37,7 +43,10 @@ const Logo = ( ) => (
 
 const BTN = (props) => (
     <View> 
-            <TouchableOpacity onPress={() => props.navigation.push('SignIn')} style={{ marginTop: 20 }}>
+            <TouchableOpacity onPress={() => (
+                props.navigation.push('SignIn')
+            
+            )} style={{ marginTop: 20 }}>
                 <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
                     {props.text}
                 </Text>
