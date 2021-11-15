@@ -1,35 +1,55 @@
 import React from 'react'
 import { View, Text, StyleSheet ,Button, TouchableOpacity} from 'react-native'
-import store from "./redux2/chatStore";
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovieById, getMovies, GET_MOVIE_BY_ID } from './redux/actions';
+
+
+
+const Disply = () => {
+    const data = useSelector(state => state.movieReducer);
+    console.log(data.movies.length)
+    return (
+        data.movies.map((movie,index) => <Text key={index}>{movie.title} </Text>
+    ))}
 
 
 const Footer = () => {
-
-    this.state = store.getState() 
-    console.log(this.state )
-
-    store.dispatch({
-        type: "LOGIN",
-        payload: { email: this.state.email, }
-      });
-      this.state = store.getState() 
-      console.log(this.state )
+    const getState = useSelector(state => state);
+    const dispatch = useDispatch();
+    [movieId , setMovieId] = React.useState(335984);
+    
+    
+    // this.state = store.getState() 
+    // console.log(this.state )
+    // store.dispatch({
+    //     type: "LOGIN",
+    //     payload: { email: this.state.email, }
+    //   });
+    //   this.state = store.getState() 
+    //   console.log(this.state )
     
 
     return (
+        <View style={styles.container}>
         <View style={styles.footer}>
         
-                <FooterItem  name="Home" func={pushHandler}/>
-                <FooterItem  name="Movie"/>
-            
+                <FooterItem  name="Display" func={()=>(Disply)}/>
+                <FooterItem  name=" Get Movie" func={() => {
+                    dispatch(getMovieById(movieId))
+                    setMovieId(movieId+1)
+                }}/>
+    
+        </View>
+        <Disply />
         </View>
     )
 }
 
-const pushHandler = () => (
+const pushHandler = () => {
+    return(
     console.log("Hi")
-    
-)
+
+)}
 
 const FooterItem = (props ) => (
     <>
@@ -45,7 +65,7 @@ const styles = StyleSheet.create({
     footer: {
         alignItems: 'center',
         justifyContent: 'center',
-        height: 50,
+        // height: 90,
         flexDirection: 'row',
         backgroundColor: '#f5f5f5',
         borderTopWidth: 1,

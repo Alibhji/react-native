@@ -3,8 +3,8 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://th-ni6.alicomtec.02-movie-list.exp.direct",
+  "packagerNgrokUrl": "https://packager.th-ni6.alicomtec.02-movie-list.exp.direct",
+  "ngrokPid": 9918,
   "webpackServerPort": null
 }
