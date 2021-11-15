@@ -1,12 +1,14 @@
 import axios from 'axios';
 
 
-// const API_URL = 'https://api.themoviedb.org/3/movie/popular';
+const API_URL = 'https://api.themoviedb.org/3/movie/popular';
 const API_KEY = 'd73c176ef00ae8d6f43850cec169d290';
-// const PARAMS = 'page=1';
-// const BASE_URL = `${API_URL}?api_key=${API_KEY}&${PARAMS}`;
-const MOVIE_ID2 = '335983'
-const BASE_URL =`https://api.themoviedb.org/3/movie/${MOVIE_ID2}?api_key=${API_KEY}`
+const PARAMS = 'page=1';
+const BASE_URL = `${API_URL}?api_key=${API_KEY}&${PARAMS}`;
+// const MOVIE_ID2 = 335983
+const MOVIE_ID2 = 100
+
+// const BASE_URL_ =`https://api.themoviedb.org/3/movie/${MOVIE_ID2}?api_key=${API_KEY}`
 
 
 // const BASE_URL =`https://api.themoviedb.org/3/movie/343611?api_key=${API_KEY}`

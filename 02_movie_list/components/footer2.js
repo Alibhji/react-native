@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { FOOTER_ICONS } from "../assets/icons";
-import { getMovieById } from "./redux/actions";
+import { getMovieById, getMovies} from "./redux/actions";
 
 const Footer2 = () => {
   [movieId, setMovieId] = React.useState(335984);
   dispatch = useDispatch();
-  getMovies = useSelector((state) => state.movieReducer);
+//   getMovies = useSelector((state) => state.movieReducer);
 
   return (
     <View style={styles.iconsContainer}>
@@ -23,8 +23,9 @@ const Footer2 = () => {
         name={FOOTER_ICONS.download.name}
         image={FOOTER_ICONS.download.image}
         presshandler={() => {
-          dispatch(getMovieById(movieId));
-          setMovieId(movieId + 1);
+            dispatch(getMovieById(movieId));
+            setMovieId(movieId + 1);
+        //   dispatch(getMovies());
         }}
       />
     </View>
