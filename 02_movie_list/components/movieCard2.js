@@ -1,21 +1,31 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 const SUMMARY_LENGTH = 200;
 const IMG_URL_ROOT = "https://image.tmdb.org/t/p/w500";
 
-const CardFooter = ({release_date ,vote_average , vote_count}) => {
-    return (
-        <View style={styles.cardFooterContainer}>
-            <Text style={styles.footerText}> {`${release_date}`} </Text> 
-            <Text style={styles.footerText}> {`vote_average: ${vote_average} out of ${vote_count}`} </Text> 
+const CardFooter = ({ release_date, vote_average, vote_count }) => {
+  return (
+    <View style={styles.cardFooterContainer}>
+      <Text style={styles.footerText}> {`${release_date}`} </Text>
+      <Text style={styles.footerText}>
+        {" "}
+        {`vote_average: ${vote_average} out of ${vote_count}`}{" "}
+      </Text>
+    </View>
+  );
+};
 
-        </View>
-    );
-}
-
-const MovieCard2 = ({ title, overview  , release_date , vote_average , vote_count,poster_path}) => {
-    
+const MovieCard2 = ({
+  title,
+  overview,
+  release_date,
+  vote_average,
+  vote_count,
+  poster_path,
+  navigation,
+  movie,
+}) => {
   return (
     <View style={styles.container}>
       <View style={[styles.image, { flex: 1 }]}>
@@ -33,13 +43,19 @@ const MovieCard2 = ({ title, overview  , release_date , vote_average , vote_coun
               : overview}
           </Text>
         </Text>
-        
-        <CardFooter release_date={release_date} vote_average={vote_average}  vote_count={vote_count}/>
 
+        <CardFooter
+          release_date={release_date}
+          vote_average={vote_average}
+          vote_count={vote_count}
+        />
       </View>
-      
-      <Image style={styles.image} source={{ uri: IMG_URL_ROOT + poster_path }} />
-      
+      <TouchableOpacity  onPress={() => navigation.push('MovieDetailsScreen' , {...movie})}>
+        <Image
+          style={styles.image}
+          source={{ uri: IMG_URL_ROOT + poster_path }}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -55,25 +71,33 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
+    height: '100%',
     resizeMode: "contain",
     backgroundColor: "#fff",
     borderRadius: 10,
     margin: 2,
     borderWidth: 1,
   },
-  textHolder: { marginLeft: 3, marginTop:3 ,marginRight:3 ,color: "grey" },
+  textHolder: { marginLeft: 3, marginTop: 3, marginRight: 3, color: "grey" },
   title: { fontSize: 12, color: "black" },
-  overview: { fontSize: 12, color: "black"},
+  overview: { fontSize: 12, color: "black" },
   cardFooterContainer: {
-      backgroundColor: "gray",
-        borderRadius: 10,
-        margin: 2,
-        borderWidth: 1,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center"
-},
-footerText: {   color: "white", fontSize: 12, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3} 
+    backgroundColor: "gray",
+    borderRadius: 10,
+    margin: 2,
+    borderWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  footerText: {
+    color: "white",
+    fontSize: 12,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
+    marginBottom: 3,
+  },
 });
 
 export default MovieCard2;

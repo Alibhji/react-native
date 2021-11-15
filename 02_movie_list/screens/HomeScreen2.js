@@ -6,7 +6,7 @@ import Footer2 from "../components/footer2";
 import MovieCard2 from "../components/movieCard2";
 
 
-const HomeScreen2 = () => {
+const HomeScreen2 = ({navigation}) => {
 
   getMovies = useSelector((state) => state.movieReducer.movies);
   console.log(getMovies);
@@ -24,8 +24,8 @@ const HomeScreen2 = () => {
 
       <View style={{ flex: 1 }}>
           <ScrollView style={{ flex: 1 }}>
-            {getMovies.map((movie) => (   
-                <MovieCard2 key={movie.id} {...movie}> </MovieCard2>
+            {getMovies.map((movie ,index) => (   
+                <MovieCard2 key={index} {...movie} movie={movie} navigation={navigation}> </MovieCard2>
             ))}
             </ScrollView>
       </View>
